@@ -17,21 +17,21 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
-		//Context API part is not yet implemented,check if the item already in the card
-		const existingItem = cart.find(cartItem => cartItem.id === item.id);
+		// //Context API part is not yet implemented,check if the item already in the card
+		// const existingItem = cart.find(cartItem => cartItem.id === item.id);
 
-		if(existingItem) {
-			// If the item is already in the cart, update its quantity
-			setCart(cart.map(cartItem =>  {
-				if(cartItem.id === item.id) {
-					return {...cartItem, quantity: cartItem.quantity + 1};
-				}
-				return cartItem;
-			}));
-		}else {      // If the item is not in the cart, add it with a quantity of 1
-			setCart([...cart, {...item, quantity: 1}])
+		// if(existingItem) {
+		// 	// If the item is already in the cart, update its quantity
+		// 	setCart(cart.map(cartItem =>  {
+		// 		if(cartItem.id === item.id) {
+		// 			return {...cartItem, quantity: cartItem.quantity + 1};
+		// 		}
+		// 		return cartItem;
+		// 	}));
+		// }else {      // If the item is not in the cart, add it with a quantity of 1
+			setCart([...cart, item]);
 		}
-	};
+	
 
 	return (
 		<div className="App">
